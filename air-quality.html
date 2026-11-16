@@ -1332,6 +1332,53 @@
       }
     }
   </style>
+
+  <style>
+    /* Fixed attribution footer */
+    body { padding-bottom: 60px; }
+    #sophia-attribution-footer {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 56px;
+      padding: 7px clamp(16px, 4vw, 48px);
+      border-top: 1px solid var(--border, #DCE2E5);
+      background: var(--surface, #FFFFFF);
+      color: var(--text, #263442);
+      font-family: var(--font, system-ui, sans-serif);
+    }
+    #sophia-attribution-footer .sophia-footer-primary {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    #sophia-attribution-footer .sophia-footer-secondary,
+    #sophia-attribution-footer .sophia-footer-supporting {
+      color: var(--muted, #667381);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+    @media (max-width: 600px) {
+      body { padding-bottom: 78px; }
+      #sophia-attribution-footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        min-height: 72px;
+        padding: 7px 12px;
+        text-align: center;
+      }
+      #sophia-attribution-footer .sophia-footer-primary { font-size: 12px; }
+      #sophia-attribution-footer .sophia-footer-secondary,
+      #sophia-attribution-footer .sophia-footer-supporting { font-size: 10px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -2499,6 +2546,15 @@
       }
     }
   </script>
+
+
+  <footer id="sophia-attribution-footer" aria-label="Dashboard attribution">
+    <div class="sophia-footer-attribution">
+      <div class="sophia-footer-primary">Dashboard developed by Sophia Liwag</div>
+      <div class="sophia-footer-secondary">Data Analysis &amp; Visualization</div>
+    </div>
+    <div class="sophia-footer-supporting">Port Activity &amp; Environmental Data</div>
+  </footer>
 
 </body>
 
